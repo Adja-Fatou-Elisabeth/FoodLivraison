@@ -7,7 +7,7 @@
             <form method="POST">
                 {% csrf_token %}
                 <div class="pt-5">
-                    {% for app in Fruits %}
+                    {% for app in appetizers %}
                     <div class="row">
                         <div class="col-md-2 col-sm-12">
                             <img class="rounded" src="{{ app.image.url }}" width="150" height="100"/>
@@ -28,7 +28,7 @@
                 </div>
 
                 <div class="pt-5">
-                    {% for entre in vetements %}
+                    {% for entre in chaussures %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
                             <img class="rounded" src="{{ entre.image.url }}" width="150" height="100"/>
@@ -49,7 +49,7 @@
                 </div>
 
                 <div class="pt-5">
-                    {% for dessert in chaussures %}
+                    {% for dessert in Fruits %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
                             <img class="rounded" src="{{ dessert.image.url }}" width="150" height="100"/>
@@ -70,7 +70,7 @@
                 </div>
 
                 <div class="pt-5">
-                    {% for drink in drinks %}
+                    {% for drink in vetements %}
                     <div class="row mt-4">
                         <div class="col-md-2 col-sm-12">
                             <img class="rounded" src="{{ drink.image.url }}" width="150" height="100"/>
@@ -90,7 +90,69 @@
                     {% endfor %}
                 </div>
 
-                <button class="btn btn-dark mt-5">Passer la commande!</button>
+                <div class="form-group pt-3">
+                    <label for="name">Nom et prénom</label>
+                    <input required class="form-control" type="text" placeholder="Votre nom" name="name" />
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="name">Email </label>
+                    <input required class="form-control" type="text" placeholder="example@company.com" name="email" />
+                </div>
+
+                <div class="form-group pt-3">
+                    <label for="name">Adresse</label>
+                    <input required class="form-control" type="text" placeholder="Ouakam 203" name="street" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">Ville</label>
+                            <input required class="form-control" type="text" placeholder="Dakar" name="city" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">Etat</label>
+                            <input required class="form-control" type="text" placeholder="SN" name="state" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-12">
+                        <div class="form-group pt-3">
+                            <label for="name">Code Postal</label>
+                            <input required class="form-control" type="text" placeholder="94117" name="zip" />
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#submitModal">
+                  Soumettre la commande
+                </button>
+                <!-- <button class="btn btn-dark mt-5">Place Order!</button> -->
+
+                <!-- Modal -->
+                <div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="submitModalLabel">Soumettez votre commande !
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Retourner</button>
+                        <button type="submit" class="btn btn-dark">Soumettre la commande!</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
             </form>
         </div>
     </div>
