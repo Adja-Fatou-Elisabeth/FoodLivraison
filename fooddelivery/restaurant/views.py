@@ -6,7 +6,6 @@ from django.utils.timezone import datetime
 
 
 class Dashboard(LoginRequiredMixin, UserPassesTestMixin, View):
-    raise_exception = True
     def get(self, request, *args, **kwargs):
         # get the current date
         today = datetime.today()
